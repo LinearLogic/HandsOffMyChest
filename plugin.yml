@@ -1,0 +1,40 @@
+name: HandsOffMyChest
+main: ss.linearlogic.homc.HandsOffMyChest
+author: LinearLogic
+version: 1.0
+permissions:
+    handsoffmychest.*:
+        description: Master node. Grants complete access.
+        children:
+            handsoffmychest.chest: true
+            handsoffmychest.enderchest: true
+            handsoffmychest.workbench: true
+            handsoffmychest.craftingtable: true
+            handsoffmychest.furnace: true
+            handsoffmychest.dispenser: true
+            handsoffmychest.brewingstand: true
+            handsoffmychest.brewstand: true
+    handsoffmychest.chest:
+        description: Allows right- and left-clicking of chests, and all resulting events
+        default: true
+    handsoffmychest.enderchest:
+        description: Allows right- and left-clicking of Ender chests, and all resulting events
+        default: true
+    handsoffmychest.workbench:
+        description: Allows right- and left-clicking of workbenches, and all resulting events
+        default: true
+    handsoffmychest.craftingtable:
+        description: Same as handsoffmychest.workbench (just idiot proofing the plugin)
+        default: true
+    handsoffmychest.furnace:
+        description: Allows right- and left-clicking of furnaces, and all resulting events
+        default: true
+    handsoffmychest.dispenser:
+        description: Allows right- and left-clicking of dispensers, and all resulting events
+        default: true
+    handsoffmychest.brewingstand:
+        description: Allows right- and left-clicking of brewing stands, and all resulting events
+        default: true
+    handsoffmychest.brewstand:
+        description: Same as handsoffmychest.brewingstand (more idiot-proofing)
+        default: true
