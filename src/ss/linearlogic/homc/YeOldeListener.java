@@ -12,53 +12,38 @@ public class YeOldeListener implements Listener {
 	public void onInventoryOpen(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 		if (event.getClickedBlock() != null) {
+			String nodeExt = "", block = ""; // If block string is nodeExt + "s", block string's value isn't changed
 			switch (event.getClickedBlock().getType()) {
 			case CHEST:
-				if (!player.hasPermission("handsoffmychest.chest")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to open chests!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "chest";
 				break;
 			case ENDER_CHEST:
-				if (!player.hasPermission("handsoffmychest.enderchest")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to open Ender chests!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "enderchest";
 				break;
 			case WORKBENCH:
-				if ((!player.hasPermission("handsoffmychest.workbench")) || !player.hasPermission("handsoffmychest.craftingtable")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to use crafting tables!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "workbench";
+				block = "crafting tables";
 				break;
 			case FURNACE:
-				if (!player.hasPermission("handsoffmychest.furnace")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to use furnaces!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "furnace";
 				break;
 			case DISPENSER:
-				if (!player.hasPermission("handsoffmychest.dispenser")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to use dispensers!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "dispenser";
 				break;
 			case BREWING_STAND:
-				if (!player.hasPermission("handsoffmychest.brewingstand") || !player.hasPermission("handsoffmychest.brewstand")) {
-					player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to use brewing stands!");
-					event.setCancelled(true);
-					return;
-				}
+				nodeExt = "brewingstand";
+				block = "brewing stands";
 				break;
 			default:
 				break;
 			}
-			return;
+			if (nodeExt.equals(""))
+				return;
+			if (!player.hasPermission("handsoffmychest." + nodeExt)) {
+				event.setCancelled(true);
+				player.sendMessage(ChatColor.RED + "Oh noes! You aren't permitted to use " + (block.equals("") ? nodeExt +
+						"s" : block) + "!");
+			}
 		}
 	}
 }
