@@ -1,17 +1,17 @@
-#HandsOffMyChest v1.0
+#HandsOffMyChest v1.2
 
 Ye olde chest access regulation and anti-griefing/raiding plugin.
 
-This wittily named little plugin was developed on request, I'll be updating it as needed to achieve functionality but don't expect to see any added features. If you're looking for a plugin that prevents access regulation for any block, there are a number of options but this is not one of them. Try ModifyWorld, for instance.
+This wittily named little plugin was developed on request, so I'll be updating it as needed to achieve functionality but don't expect to see any added features. If you're looking for a plugin that prevents access regulation for any block, there are a number of options but this is not one of them. Try ModifyWorld, for instance.
 
 HandsOffMyChest enables you to restrict players' access to each of the following:
 
---> Chests
---> Ender chests
---> Crafting tables
---> Furnaces
---> Dispensers
---> Brewing stands
+* Chests
+* Ender chests
+* Crafting tables
+* Furnaces
+* Dispensers
+* Brewing stands
 
 When players try to interact with one of the listed "inventories" and aren't permitted to do so, they are sent an error message. HandsOffMyChest blocks both right- and left-clicking the blocks, so that players who aren't permitted to interact (right click) with the block won't destroy it out of spite.
 
@@ -25,11 +25,9 @@ Note: players have access to all "inventories" (listed above) by default. If you
 
 Nodes:
 
---> handsoffmychest.chest
---> handsoffmychest.enderchest
---> handsoffmychest.craftingtable
---> handsoffmychest.workbench (same as the above craftingtable node. Just idiot-proofing the plugin)
---> handsoffmychest.furnace
---> handsoffmychest.dispenser
---> handsoffmychest.brewingstand
---> handsoffmychest.brewstand (More idiot-proofing)
+* handsoffmychest.chest
+* handsoffmychest.enderchest
+* handsoffmychest.craftingtable
+* handsoffmychest.furnace
+* handsoffmychest.dispenser
+* handsoffmychest.brewingstand
